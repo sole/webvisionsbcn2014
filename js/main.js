@@ -9,6 +9,14 @@ window.onload = function() {
 		}
 	);
 
+	document.addEventListener('keydown', function(e) {
+		if(e.metaKey && e.key === 'e') {
+			console.log('eval now');
+			runCode(cm.getSelection());
+			e.preventDefault();
+		}
+	});
+
 	// MAGIC!
 	function trimInitialTabs(str) {
 		var tabsRe = /(\t*)/;
@@ -22,6 +30,11 @@ window.onload = function() {
 			return line.replace(replacementRe, '');
 		});
 		return lines.join('\n');
+	}
+
+	function runCode(str) {
+		console.log('should run', str);
+		eval(str);
 	}
 };
 
