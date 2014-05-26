@@ -10,8 +10,14 @@
 	</head>
 	<body>
 	<textarea id="code" cols="40" rows="30">
-		console.log('woop');
-		alert('heh');
+		var audioContext = new AudioContext();
+		console.log(audioContext.sampleRate);
+		var oscillator = audioContext.createOscillator();
+		console.log(oscillator);
+		oscillator.connect(audioContext.destination);
+		oscillator.frequency.value = 220;
+		console.log(oscillator.frequency.value);
+		oscillator.start();
 	</textarea>
 	</body>
 </html>

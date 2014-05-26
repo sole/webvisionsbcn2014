@@ -33,8 +33,7 @@ window.onload = function() {
 	}
 
 	function runCode(str) {
-		console.log('should run', str);
-		eval(str);
+		console.log(eval(str));
 	}
 };
 
