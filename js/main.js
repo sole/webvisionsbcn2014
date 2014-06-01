@@ -32,8 +32,12 @@ window.onload = function() {
 		return lines.join('\n');
 	}
 
-	function runCode(str) {
-		console.log(eval(str));
-	}
+	var runCode = (function makeEval() {
+		var cheatyEval = eval;
+		return function (str) {
+			cheatyEval(str);
+		};
+	})();
+
 };
 
