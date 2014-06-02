@@ -5,7 +5,10 @@ window.onload = function() {
 	var cm = CodeMirror(function(el) {
 			ta.parentNode.replaceChild(el, ta);
 		}, {
-			value: codeValue
+			value: codeValue,
+			lineWrapping: true,
+			lineNumbers: true,
+			styleActiveLine: true
 		}
 	);
 

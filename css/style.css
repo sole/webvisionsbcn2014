@@ -2,3 +2,11 @@
 	border: 1px solid black;
 	font-size: 2rem;
 }
+
+.CodeMirror-matchingbracket {
+	color: red;
+}
+
+.CodeMirror-linenumber { color: #aaa; margin-left: 3px; }
+.CodeMirror-activeline-background { background: #dff; }
+.CodeMirror-cursor { border-left: 4px solid #222; background: red; width: 3px; }
