@@ -8,7 +8,8 @@ window.onload = function() {
 			value: codeValue,
 			lineWrapping: true,
 			lineNumbers: true,
-			styleActiveLine: true
+			styleActiveLine: true,
+			matchBrackets: true
 		}
 	);
 
