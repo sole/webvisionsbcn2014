@@ -15,7 +15,7 @@
 		return lines.join('\n');
 	}
 
-	var runCode = (function makeEval() {
+	var execute = (function makeEval() {
 		var cheatyEval = eval;
 		return function (str) {
 			cheatyEval(str);
@@ -27,7 +27,9 @@
 
 	proto.createdCallback = function() {
 		console.log('oh hey');
-		this.innerHTML = 'wiii';
+		
+		this.cm = null;
+
 		var codeSrc = this.attributes.src.value;
 		
 		if(codeSrc === undefined) {
@@ -35,6 +37,13 @@
 		} else {
 			this.loadCode(codeSrc);
 		}
+
+		this.addEventListener('keydown', function(e) {
+			if(e.metaKey && (e.key === 'e' || e.keyCode === 69)) {
+				this.runCode();
+				e.preventDefault();
+			}
+		}, false);
 	};
 
 	proto.loadCode = function(url) {
@@ -55,6 +64,7 @@
 	proto.onCodeLoaded = function(code) {
 		var that = this;
 		var ta = document.createElement('textarea');
+		this.innerHTML = '';
 		this.appendChild(ta);
 		
 		var codeValue = trimInitialTabs(code).trimRight();
@@ -69,6 +79,26 @@
 				showTrailingSpace: true,
 			}
 		);
+		this.cm = cm;
+	};
+
+	proto.runCode = function() {
+
+		if(!this.cm) {
+			console.log('nothing to run!');
+			return;
+		}
+		var code = this.cm.getSelection().trim();
+
+		// Ah, but nothing's selected, so we'll find where the cursor is
+		// and execute that line only
+		if(code.length === 0) {
+			var cursor = this.cm.getCursor();
+			code = this.cm.getLine(cursor.line);
+		}
+
+		execute(code);
+
 	};
 
 	document.registerElement('x-editor', {
