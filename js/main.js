@@ -1,7 +1,7 @@
 window.onload = function() {
 	console.log('load');
 	var ta = document.querySelector('textarea');
-	var codeValue = trimInitialTabs(ta.value);
+	var codeValue = trimInitialTabs(ta.value).trimRight();
 	var cm = CodeMirror(function(el) {
 			ta.parentNode.replaceChild(el, ta);
 		}, {
