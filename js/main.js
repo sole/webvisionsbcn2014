@@ -1,4 +1,6 @@
-window.onload = function() {
-	console.log('load');
-};
-
+window.addEventListener('DOMComponentsLoaded', function() {
+	console.log('do the magic');
+	Brickpresso.init({
+		useMouse: false
+	});
+});

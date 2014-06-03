@@ -10,12 +10,28 @@
 		<script src="lib/codemirror/addon/edit/matchbrackets.js" defer></script>
 		<script src="lib/codemirror/addon/edit/trailingspace.js" defer></script>
 
+
+		<script src="lib/brickpresso/libs/x-tag/core.js" defer></script>
+		<script src="lib/brickpresso/libs/x-tag/deck.js" defer></script>
+		<script src="lib/brickpresso/brickpresso.js" defer></script>
+		<link rel="stylesheet" href="lib/brickpresso/css/x-tag/deck.css">
+		<link rel="stylesheet" href="lib/brickpresso/css/style.css">
+
 		<script src="js/x-editor.js" defer></script>
 		
 		<script src="js/main.js" defer></script>
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<x-editor src="data/basic-audio.js"></x-editor>
+		<x-deck>
+			<x-card>
+				mmm
+			</x-card>
+			<x-card>
+				code
+				<x-editor src="data/basic-audio.js"></x-editor>
+			</x-card>
+		</x-deck>
+		<!--<x-editor src="data/basic-audio.js"></x-editor>-->
 	</body>
 </html>
