@@ -9,7 +9,8 @@ window.onload = function() {
 			lineWrapping: true,
 			lineNumbers: true,
 			styleActiveLine: true,
-			matchBrackets: true
+			matchBrackets: true,
+			showTrailingSpace: true
 		}
 	);
 

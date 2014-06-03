@@ -13,5 +13,9 @@ div.CodeMirror span.CodeMirror-matchingbracket {
 	outline: 1px solid #ccc;
 	background: #eee;
 }
+.cm-trailingspace {
+	border-bottom: 3px dotted red;
+	background: #fee;
+}
 
 
