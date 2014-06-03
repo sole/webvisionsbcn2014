@@ -3,4 +3,6 @@
 - active line background change with transition
 - load script in editor -> custom component? e.g. <x-editor src="example/amazing.js"></x-editor>
 - why does the web component not work in Firefox?
-- also say webcomponentsenabled needs to be true
+	- also say webcomponentsenabled needs to be true
+	- use <template>?
+	- is it possible to place the code mirror dependency inside the component only?
