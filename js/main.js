@@ -10,14 +10,23 @@ window.onload = function() {
 			lineNumbers: true,
 			styleActiveLine: true,
 			matchBrackets: true,
-			showTrailingSpace: true
+			showTrailingSpace: true,
 		}
 	);
 
+
 	document.addEventListener('keydown', function(e) {
 		if(e.metaKey && e.key === 'e') {
-			console.log('eval now');
-			runCode(cm.getSelection());
+			var code = cm.getSelection().trim();
+			
+			// Ah, but nothing's selected, so we'll find where the cursor is
+			// and execute that line only
+			if(code.length === 0) {
+				var cursor = cm.getCursor();
+				code = cm.getLine(cursor.line);
+			}
+
+			runCode(code);
 			e.preventDefault();
 		}
 	});
