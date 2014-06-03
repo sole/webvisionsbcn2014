@@ -8,18 +8,21 @@
 		<script src="lib/addon/selection/active-line.js" defer></script>
 		<script src="lib/addon/edit/matchbrackets.js" defer></script>
 		<script src="lib/addon/edit/trailingspace.js" defer></script>
+		<script src="js/x-editor.js" defer></script>
 		<script src="js/main.js" defer></script>
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-	<textarea id="code" cols="40" rows="30">
-		var audioContext = new AudioContext();
-		console.log(audioContext.sampleRate);
-		var oscillator = audioContext.createOscillator();
-		console.log(oscillator);
-		oscillator.connect(audioContext.destination);
-		oscillator.frequency.value = 220;
-		console.log(oscillator.frequency.value);
-		oscillator.start();</textarea>
+		<textarea id="code" cols="40" rows="30">
+			var audioContext = new AudioContext();
+			console.log(audioContext.sampleRate);
+			var oscillator = audioContext.createOscillator();
+			console.log(oscillator);
+			oscillator.connect(audioContext.destination);
+			oscillator.frequency.value = 220;
+			console.log(oscillator.frequency.value);
+			oscillator.start();
+		</textarea>
+		<x-editor src="js/main.js"></x-editor>
 	</body>
 </html>
