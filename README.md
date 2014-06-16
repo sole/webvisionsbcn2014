@@ -9,3 +9,8 @@
 - push to upstream the fixes in brickpresso
 - brickpresso change slides on page up/down only as option (so arrows can be used to navigate the code)
 - probably update the brickpresso (deck) css to a recent version, if applicable
+
+- platform.js
+	- html imports
+		- code mirror encapsulation?
+		- ~~~ brick deck
