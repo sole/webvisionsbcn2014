@@ -1,11 +1,23 @@
 .CodeMirror {
 	border: 1px solid black;
 	font-size: 2rem;
+	transition: box-shadow 0.3s ease-in;
 }
 
 .CodeMirror-linenumber { color: #aaa; margin-left: 3px; }
 .CodeMirror-activeline-background { background: #dff; }
 .CodeMirror-cursor { border-left: 4px solid #222; background: red; width: 3px; }
+.CodeMirror-focused {
+	box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+}
+
+x-editor {
+	height: 100%;
+}
+
+x-editor .CodeMirror {
+	height: 100%;
+}
 
 /* woa talk about specifity */
 div.CodeMirror span.CodeMirror-matchingbracket {

@@ -30,7 +30,11 @@
 		
 		this.cm = null;
 
-		var codeSrc = this.attributes.src.value;
+		var codeSrc;
+		
+		if(this.attributes.src) {
+			codeSrc = this.attributes.src.value;
+		}
 		
 		if(codeSrc === undefined) {
 			this.onCodeLoaded('// No src specified');
