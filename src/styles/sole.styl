@@ -126,8 +126,10 @@ article
 // bespoke-scale styles
 .bespoke-scale-parent
   perspective: 600px
-  position: absolute
-  top: 0
+  //position: absolute // <-- that makes links not clickable in Firefox (?)
+  //top: 0             // <-- 
+  position: relative
+  top: 50%
   left: 0
   right: 0
   bottom: 0
@@ -193,12 +195,16 @@ fancy_border2_padding = 20px
   padding: 15px
 
 
-/*.cover h2
-  background: rgba(255, 255, 255, 0.7)
-  padding: 10px
-  max-width: 64%
-  width: auto;
-  border-bottom: 6px solid text_color_highlight*/
+.feature img
+  display: inline-block
+  max-height: 80%
+  max-width: 75%
+  width: auto
+  //max-width: 60%
+  //height: auto
+  //width: auto
+  -moz-object-fit: contain
+  object-fit: contain
 
 // prism styles
 
@@ -263,7 +269,6 @@ p
 a
   color: #0089f3
   text-decoration: none
-
 
 .bespoke-slide aside
   display: none
