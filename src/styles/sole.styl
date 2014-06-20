@@ -85,13 +85,15 @@ article
     zoom: 1 !important // disable bespoke-scale
     height: 743px // seems to correspond with an A4, landscape page height
     width: 100%
-    page-break-before: always
+    page-break-after: always
     position: static
     margin: 0
 
 
 .bespoke-before
   transform: translateX(slide_transition_nudge_x * -1) translateX(slide_width / -2) rotateY(slide_transition_rotate_y * -1) translateX(slide_width / -2)
+  @media print
+    transform: none
 
 .bespoke-after
   transform: translateX(slide_transition_nudge_x) translateX(slide_width / 2) rotateY(slide_transition_rotate_y) translateX(slide_width / 2)
@@ -225,13 +227,15 @@ h1
 
 h2
   font-size: 60px
-  line-height: 45px
+  line-height: 46px
   letter-spacing: -1px
   margin-bottom: 8px
 
 h3
   font-size: 40px
   margin-bottom: 6px
+  letter-spacing: -1px
+  line-height: 40px
 
 q
   font-size: 30px
