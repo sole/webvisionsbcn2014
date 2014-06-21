@@ -1,12 +1,8 @@
-h1 {
-	font-family: monospace;
-	font-size: 40px;
-	margin: 0 0 10px 0;
-}
+
 
 .CodeMirror {
 	border: 1px solid black;
-	font-size: 2rem;
+	font-size: 1.5rem;
 	transition: box-shadow 0.3s ease-in;
 }
 
@@ -34,6 +30,21 @@ div.CodeMirror span.CodeMirror-matchingbracket {
 .cm-trailingspace {
 	border-bottom: 3px dotted red;
 	background: #fee;
+}
+
+html, body {
+  height: 100%;
+}
+
+html {
+  border-left: 2rem solid #ccc;
+  padding-left: 1rem;
+}
+
+h1 {
+	font-family: monospace;
+	font-size: 40px;
+	margin: 0 0 10px 0;
 }
 
 
