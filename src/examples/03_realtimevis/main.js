@@ -18,12 +18,25 @@ analyserData = new Uint8Array(analyser.frequencyBinCount);
 var sceneWidth = 320;
 var sceneHeight = 240;
 var range = 20;
-var u = 1;
+
 var content = document.getElementById('content');
 var renderer = new THREE.WebGLRenderer({ antialias: true });
 var scene = new THREE.Scene();
+
+var light = new THREE.DirectionalLight(0x00ff00, 1.75);
+light.position.set(0, range * 2, 0);
+light.castShadow = true;
+scene.add(light);
+
+var planeGeometry = new THREE.PlaneGeometry(100, 100, 100, 100);
+var planeMaterial = new THREE.MeshLambertMaterial({ color: 0xFF00FF });
+var plane = new THREE.Mesh(planeGeometry, planeMaterial);
+plane.rotation.set(Math.PI, 0, 0);
+scene.add(plane);
+
+var u = 1;
 var geometry = new THREE.BoxGeometry(u, u, u);
-var material = new THREE.MeshBasicMaterial({ color: 0xFFFFFF, wireframe: true, wireframeLinewidth: 3 });
+var material = new THREE.MeshLambertMaterial({ color: 0xFFFFFF });
 var numBars = 20;
 var row = [];
 var visualScale = 20;
@@ -42,7 +55,8 @@ var left = -u * numBars;
 var x = left;
 for(var i = 0; i < numBars; i++) {
   var bar = new THREE.Mesh(geometry, material);
-  bar.position.set(x, 0, 0);
+  bar.position.set(x, u * 2, 0);
+  bar.castShadow = true;
   scene.add(bar);
   row.push(bar);
   x += u * 2;
