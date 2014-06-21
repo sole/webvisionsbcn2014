@@ -21,7 +21,7 @@ var sceneHeight = 240;
 var range = 250;
 
 var content = document.getElementById('content');
-var renderer = new THREE.WebGLRenderer({ antialias: true });
+var renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
 renderer.shadowMapEnabled = true;
 renderer.shadowMapSoft = true;
 var scene = new THREE.Scene();
